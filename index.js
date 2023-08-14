@@ -8,8 +8,9 @@ const { connection } = require("./config/db.js");
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("HOME PAGE");
+  res.send("BitSpeed Assignment");
 });
+
 app.use("/", contactRouter);
 
 app.listen(8080, async () => {
