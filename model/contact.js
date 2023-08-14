@@ -1,15 +1,14 @@
-// models/contact.js
 const mongoose = require("mongoose");
 
-const contactSchema = new mongoose.Schema({
-  phoneNumber: String,
-  email: String,
-  linkedId: { type: mongoose.Schema.Types.ObjectId, ref: "Contact" },
-  linkPrecedence: { type: String, enum: ["primary", "secondary"] },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: Date,
-  deletedAt: Date,
-});
+const contactSchema = new mongoose.Schema(
+  {
+    email: String,
+    phoneNumber: String,
+    linkedPrecedence: String,
+    linkedId: { type: mongoose.Schema.Types.ObjectId, ref: "Contact" },
+  },
+  { timestamps: true }
+);
 
 const Contact = mongoose.model("Contact", contactSchema);
 
